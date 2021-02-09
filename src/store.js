@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
+import reducers from './reducers';
 import state from "./state";
-import reducers from "./reducers/index";
 
-let store = createStore(reducers,state);
+let store = createStore(reducers, state);
 
 export default store;

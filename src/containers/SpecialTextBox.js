@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import SpecialTextBox from "../components/SpecialTextBox";
+import { setSpecialText } from '../actions';
+import SpecialTextBox from '../components/SpecialTextBox';
 
 //map the "setSpecialText" action function to a prop function called "set"
 const mapDispatchToProps = {
-  
+  set: (text) => setSpecialText(text)
 }
 
-export default connect(null, mapDispatchToProps)(SpecialTextBox);
+export default connect(null, mapDispatchToProps) (SpecialTextBox);
