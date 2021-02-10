@@ -32,10 +32,10 @@ export function setCurrentTemp(temp){
   }
 }
 
-export function setdisplayModal(text){
+export function toggleModal(modal){
   return {
-    type: "SET_DISPLAY_MODAL",
-    value: text
+    type: "TOGGLE_MODAL",
+    value: modal
   }
 }
 

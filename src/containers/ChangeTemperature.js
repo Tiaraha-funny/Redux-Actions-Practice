@@ -2,4 +2,8 @@ import { connect } from "react-redux";
 import { setCurrentTemp } from "../actions";
 import ChangeTemperature from "../components/ChangeTemperature";
 
-export default connect(null, { set: setCurrentTemp})(ChangeTemperature);
+const mapDispatchToProps = {
+        set: setCurrentTemp,
+}
+
+export default connect(null, mapDispatchToProps)(ChangeTemperature);

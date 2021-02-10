@@ -1,4 +1,10 @@
 import { connect } from "react-redux";
 import Thermostat from "../components/Thermostat";
 
-export default connect((state) => ({temp: state.temp}))(Thermostat);
+function mapStateToProps(globalState) {
+  return {
+    temp: globalState.currentTemp,
+  };
+}
+
+export default connect(mapStateToProps, null)(Thermostat);

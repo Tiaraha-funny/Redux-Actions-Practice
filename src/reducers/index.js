@@ -37,7 +37,7 @@ function searchText(state = "", action) {
 function currentTemp(state = 0, action) {
   switch (action.type) {
     case "SET_CURRENT_TEMP":
-      return action.value;
+      return state + 1;
     default:
       return state;
   }
@@ -45,7 +45,7 @@ function currentTemp(state = 0, action) {
 
 function displayModal(state = false, action) {
   switch (action.type) {
-    case "SET_DISPLAY_MODAL":
+    case "TOGGLE_MODAL":
       return action.value;
     default:
       return state;
@@ -73,19 +73,18 @@ function currentUserSort(state = "first_name", action) {
 function imageScale(state = 1, action) {
   switch (action.type) {
     case "SET_IMAGE_SCALE":
-      return { ...state };
+      return action.value;
     default:
       return state;
   }
 }
 
 function users(state = [], action) {
-  console.log(state);
   switch (action.type) {
     case "ADD_USER":
       return [...state, action.value];
     case "REMOVE_USER":
-    return state.slice(0, state.length - 2);
+      return state.slice(0, state.length - 2);
     default:
       return state;
   }
